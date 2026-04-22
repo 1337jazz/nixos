@@ -5,9 +5,11 @@
 	home.homeDirectory = "/home/jazz";
 	home.stateVersion = "25.11";
 
+	home.file."scripts".source = ./scripts;
 	home.file.".config/i3".source = ./i3;
 	home.file.".config/nvim".source = ./nvim;
 	home.file.".config/kitty".source = ./kitty;
+	home.file.".config/polybar".source = ./polybar;
 
 	programs.git = {
 		enable = true;
