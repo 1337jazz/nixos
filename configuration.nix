@@ -104,10 +104,12 @@
 	tree
 	bat
 	fd
+	fzf
 	translate-shell
 	docker
 	ranger
 	kubectl
+	trash-cli
   ];
 
   # Enable bluetooth

@@ -7,6 +7,7 @@
 
 	home.file.".config/i3".source = ./i3;
 	home.file.".config/nvim".source = ./nvim;
+	home.file.".config/kitty".source = ./kitty;
 
 	programs.git = {
 		enable = true;
@@ -57,5 +58,9 @@
 			];
 			theme = "af-magic";
 		};
+
+		initContent = ''
+  			[[ "$TERM" == "xterm-kitty" ]] && alias ssh="TERM=xterm-256color ssh"
+		'';
 	};
 }
