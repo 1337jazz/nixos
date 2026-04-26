@@ -13,40 +13,28 @@
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
 
-
+  # Enable Home Manager
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
   home-manager.users.jazz = import ./home.nix;
 
-
- # Set up X11 with XFCE and i3wm
- services.xserver = {
-    enable = true;   
-    desktopManager = {
-      xterm.enable = false;
-      xfce = {
-        enable = true;
-        noDesktop = true;
-        enableXfwm = false;
-      };
-    };
-    windowManager.i3.enable = true;
-  };
-  
-  services.displayManager.defaultSession = "xfce+i3";
-
+  # Networking
   networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
   networking.networkmanager.enable = true;
 
-  # users.defaultUserShell=pkgs.zsh; 
+  # Enable bluetooth
+  hardware.bluetooth.enable = true;
+
+  # Shell
+  users.defaultUserShell=pkgs.zsh; 
   programs.zsh.enable = true;
+
+  # Add Hyperland
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true; # recommended for most users
+    xwayland.enable = true; # Xwayland can be disabled.
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/Stockholm";
@@ -110,11 +98,8 @@
 	ranger
 	kubectl
 	trash-cli
-	polybar
+	jq
   ];
-
-  # Enable bluetooth
-  hardware.bluetooth.enable = true;
 
   fonts.packages = with pkgs; [
 	noto-fonts

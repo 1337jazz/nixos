@@ -6,10 +6,10 @@
 	home.stateVersion = "25.11";
 
 	home.file."scripts".source = ./scripts;
-	home.file.".config/i3".source = ./i3;
+	# home.file.".config/i3".source = ./i3;
 	home.file.".config/nvim".source = ./nvim;
 	home.file.".config/kitty".source = ./kitty;
-	home.file.".config/polybar".source = ./polybar;
+	# home.file.".config/polybar".source = ./polybar;
 
 	programs.git = {
 		enable = true;
@@ -46,6 +46,7 @@
 			rsync="rsync -ravhP"; # recursive, archive, verbose, human-readable, progress (and partial)
 			cat="bat";
 			fd="fd -H"; # include hidden files by default
+			nixsw="sudo nixos-rebuild switch --flake ~/.dotfiles";
 		};
 		oh-my-zsh = {
 			enable = true;
