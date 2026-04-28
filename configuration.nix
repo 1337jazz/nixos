@@ -2,39 +2,35 @@
 
 {
   imports =
-    [
+    [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
-
+    
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # Bootloader
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
-
-  # Enable Home Manager
+ # Enable Home Manager
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
   home-manager.users.jazz = import ./home.nix;
 
-  # Networking
+  programs.hyprland.enable = true;
+
+  # Bootloader.
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = "nodev";
+  boot.loader.grub.efiSupport = true;
+  # boot.loader.grub.useOSProber = false;
+  boot.loader.efi.canTouchEfiVariables = true;
+
   networking.hostName = "nixos"; # Define your hostname.
+
+  # Enable networking
   networking.networkmanager.enable = true;
 
-  # Enable bluetooth
   hardware.bluetooth.enable = true;
 
-  # Shell
-  users.defaultUserShell=pkgs.zsh; 
+  users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
-
-  # Add Hyperland
-  programs.hyprland = {
-    enable = true;
-    withUWSM = true; # recommended for most users
-    xwayland.enable = true; # Xwayland can be disabled.
-  };
 
   # Set your time zone.
   time.timeZone = "Europe/Stockholm";
@@ -68,52 +64,45 @@
     isNormalUser = true;
     description = "jazz";
     extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [];
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile
+  # List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [
-    neovim
-    firefox
-    xclip
-    kitty
-    git
-    flameshot
-    atool
-    unzip
-	gnumake
-	pnpm
-	yarn
-	gcc
-	nodejs_24
-	go
-	tree
-	bat
-	fd
-	fzf
-	translate-shell
-	docker
-	ranger
-	kubectl
-	trash-cli
-	jq
-  ];
+   efibootmgr
+   neovim 
+   wget
+   kitty
+   firefox
+   nwg-displays
+   wofi
+   brightnessctl
+   playerctl
+   git
+   atool
+   unzip
+   nodejs_24
+   gcc
+   gnumake
+   bat
+   tree
+   fd
+   fzf
+   translate-shell
+   docker
+   ranger
+   trash-cli
+   jq
+    opencode
+    yarn
+    pnpm
+    go
+	xclip
+   ];
 
-  fonts.packages = with pkgs; [
-	noto-fonts
-	noto-fonts-cjk-sans
-	noto-fonts-color-emoji
-	liberation_ttf
-	fira-code
-	fira-code-symbols
-	mplus-outline-fonts.githubRelease
-	dina-font
-	proggyfonts
-	nerd-fonts.jetbrains-mono
-  ];
+  system.stateVersion = "25.11";
 
-
-  system.stateVersion = "25.11"; # Did you read the comment?
 }
