@@ -29,7 +29,6 @@
 	# Enable networking
 	networking.hostName = "nixos"; # Define your hostname.
 	networking.networkmanager.enable = true;
-	networking.wireless.iwd.enable = true;
 
 	# Enable Bluetooth
 	hardware.bluetooth.enable = true;
