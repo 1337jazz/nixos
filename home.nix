@@ -42,7 +42,6 @@
 		fzf
 		jq
 		translate-shell
-		impala
 		bluetui
 
 		# Dev tools
