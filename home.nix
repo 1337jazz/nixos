@@ -9,7 +9,49 @@
 	# home.file.".config/i3".source = ./i3;
 	home.file.".config/nvim".source = ./nvim;
 	home.file.".config/kitty".source = ./kitty;
+	home.file.".config/hypr".source = ./hypr;
 	# home.file.".config/polybar".source = ./polybar;
+
+	# Mako for notifications
+	services.mako.enable = true;
+
+	home.packages = with pkgs; [
+		# Personal tools
+		neovim
+		kitty
+		firefox
+		fastfetch
+		ranger
+		trash-cli
+
+		# Wayland / desktop
+		nwg-displays
+		wofi
+		brightnessctl
+		playerctl
+		xclip
+		libnotify
+		hyprpolkitagent
+
+		# CLI utilities
+		atool
+		unzip
+		bat
+		tree
+		fd
+		fzf
+		jq
+		translate-shell
+		impala
+		bluetui
+
+		# Dev tools
+		nodejs_24
+		yarn
+		pnpm
+		go
+		opencode
+	];
 
 	programs.git = {
 		enable = true;
@@ -46,7 +88,7 @@
 			rsync="rsync -ravhP"; # recursive, archive, verbose, human-readable, progress (and partial)
 			cat="bat";
 			fd="fd -H"; # include hidden files by default
-			nixsw="sudo nixos-rebuild switch --flake ~/.dotfiles";
+			nu="sudo nixos-rebuild switch --flake ~/.dotfiles";
 		};
 		oh-my-zsh = {
 			enable = true;
@@ -66,4 +108,6 @@
   			[[ "$TERM" == "xterm-kitty" ]] && alias ssh="TERM=xterm-256color ssh"
 		'';
 	};
+
+	programs.waybar.enable = true;
 }
