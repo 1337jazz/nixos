@@ -10,11 +10,12 @@
 	home.file.".config/nvim".source = ./nvim;
 	home.file.".config/kitty".source = ./kitty;
 	home.file.".config/hypr".source = ./hypr;
-	# home.file.".config/polybar".source = ./polybar;
+	home.file.".config/waybar".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/waybar";
 
 	# Mako for notifications
 	services.mako.enable = true;
 
+	# User packages
 	home.packages = with pkgs; [
 		# Personal tools
 		neovim
@@ -28,6 +29,8 @@
 		nwg-displays
 		wofi
 		brightnessctl
+		pavucontrol
+		alsa-utils
 		playerctl
 		xclip
 		libnotify
@@ -74,7 +77,7 @@
 			vpn-off="nmcli connection down skymill_vpn";
 			gitcon="git diff --name-only --diff-filter=U --relative";
 			lgit="git";
-			gl="git log --oneline";
+			gl="git --no-pager log --oneline";
 			rmf="\rm -rf";
 			rm="trash";
 			vim="nvim";
@@ -109,4 +112,14 @@
 	};
 
 	programs.waybar.enable = true;
+
+	# SSH config - manually add ssh keys!
+	programs.ssh = {
+		enable = true;
+		extraConfig = "
+	  	Host kevin 
+			Hostname 192.168.0.151
+			User jazz
+		";
+	};
 }

@@ -1,0 +1,101 @@
+// -*- mode: jsonc -*-
+{
+	// "layer": "top", // Waybar at top layer
+	"position": "bottom", // Waybar position (top|bottom|left|right)
+	// "height": 30, // Waybar height (to be removed for auto height)
+	// "width": 1280, // Waybar width
+	"spacing": 4, // Gaps between modules (4px)
+	// Choose the order of the modules
+	"modules-left": [
+		"hyprland/workspaces"
+	],
+	"modules-right": [
+		"pulseaudio",
+		"temperature",
+		"memory",
+		"cpu",
+		"disk",
+		"battery",
+		"network",
+		"clock"
+	],
+	"disk": {
+		"format": " {free}",
+		"format-alt": "{icon} {used}/{total}GB"
+	},
+	"clock": {
+		// "timezone": "America/New_York",
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>",
+		"format": "{:%A %d/%m %H:%M}",
+		"format-alt": "{:%Y-%m-%d %H:%M:%S}"
+	},
+	"cpu": {
+		"format": " {usage}%",
+		"tooltip": false
+	},
+	"memory": {
+		"format": " {}%"
+	},
+	"temperature": {
+		"critical-threshold": 80,
+		"format": "{icon} {temperatureC}°C",
+		"format-icons": [
+			"󰉬",
+			"",
+			"󰉪"
+		]
+	},
+	"battery": {
+		"states": {
+			// "good": 95,
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "{icon} {capacity}%",
+		// "format-full": "{capacity}% {icon}",
+		"format-full": "",
+		"format-charging": "{capacity}% 󰃨",
+		"format-plugged": "{capacity}% ",
+		"format-alt": "{icon} {time}",
+		// "format-good": "", // An empty format will hide the module
+		"format-icons": [
+			"󱟥",
+			"󰁽",
+			"󰁿",
+			"󰂁",
+			"󰁹"
+		]
+	},
+	"network": {
+		// "interface": "wlp2*", // (Optional) To force the use of this interface
+		"format-wifi": "  {essid} ({signalStrength}%)",
+		"format-ethernet": "{ipaddr}/{cidr} 󰊗",
+		"tooltip-format": "{ifname} via {gwaddr} 󰊗",
+		"format-linked": "{ifname} (No IP) 󰊗",
+		"format-disconnected": "Disconnected ⚠",
+		"format-alt": "{ifname}: {ipaddr}/{cidr}"
+	},
+	"pulseaudio": {
+		// "scroll-step": 1, // %, can be a float
+		"format": "{icon} {volume}%",
+		"format-bluetooth": "{volume}% {icon} {format_source}",
+		"format-bluetooth-muted": "",
+		"format-muted": "",
+		"format-source": "{volume}% ",
+		"format-source-muted": "",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "󰂑",
+			"headset": "󰂑",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": [
+				"",
+				"",
+				" "
+			]
+		},
+		"on-click": "amixer set Master toggle" // Toggle mute on click
+	}
+}

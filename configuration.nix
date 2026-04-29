@@ -66,12 +66,11 @@
 	# Configure console keymap
 	console.keyMap = "uk";
 
-	# Define a user account. Don't forget to set a password with ‘passwd’.
+	# Define user accounts
 	users.users.jazz = {
 		isNormalUser = true;
 		description = "jazz";
-		extraGroups = [ "networkmanager" "wheel" "docker" ];
-		packages = with pkgs; [];
+		extraGroups = [ "networkmanager" "wheel" "docker"];
 	};
 
 	# Allow unfree packages
@@ -84,13 +83,14 @@
 		wget
 		gcc
 		gnumake
+		cargo
 		ripgrep
 	];
 
 	system.stateVersion = "25.11";
 
 	fonts.packages = with pkgs; [
-		font-awesome_4
+		font-awesome
 		noto-fonts
 		noto-fonts-cjk-sans
 		noto-fonts-color-emoji
