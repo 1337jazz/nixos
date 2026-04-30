@@ -59,8 +59,9 @@
 
 	# Configure keymap in X11
 	services.xserver.xkb = {
-		layout = "gb";
+		layout = "gb,se";
 		variant = "";
+        options = "";
 	};
 
 	# Configure console keymap

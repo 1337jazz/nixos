@@ -65,6 +65,7 @@ button:hover {
 #idle_inhibitor,
 #scratchpad,
 #power-profiles-daemon,
+#language,
 #mpd {
 	padding: 0 8px;
 	color: #ffffff;
@@ -122,8 +123,6 @@ label:focus {
 	background-color: #f53c3c;
 }
 
-#pulseaudio {}
-
 #pulseaudio.muted {
 	background-color: #90b1b1;
 	color: #2a5c45;
@@ -134,10 +133,4 @@ label:focus {
 	background-color: #eb4d4b;
 }
 
-#language {
-	background: #00b093;
-	color: #740864;
-	padding: 0 5px;
-	margin: 0 5px;
-	min-width: 16px;
-}
+#language {}

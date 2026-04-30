@@ -10,17 +10,24 @@
 		"hyprland/workspaces"
 	],
 	"modules-right": [
+		"disk",
 		"pulseaudio",
-		"temperature",
+		"hyprland/language",
 		"memory",
 		"cpu",
-		"disk",
+		"temperature",
 		"battery",
 		"network",
 		"clock"
 	],
+	"hyprland/language": {
+		"format": "{}",
+		"format-en": "gb",
+		"format-sv": "sv",
+		"keyboard-name": "at-translated-set-2-keyboard"
+	},
 	"disk": {
-		"format": " {free}",
+		"format": " {percentage_used}%",
 		"format-alt": "{icon} {used}/{total}GB"
 	},
 	"clock": {
