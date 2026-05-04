@@ -4,20 +4,24 @@
 - [x] SSH
 - [x] Wifi gui -> nmcli
 - [] Waybar config
-    - [] Keyboard layout
+    - [x] Keyboard layout
     - [-] Keyboard state (caps locks etc) 
     - [] Cursors (fix "Unable to load arrow from the cursor theme")
 - [] Hyprland config
+    - [] Sleep
     - [] Screen locking
-    - [] Maybe take away "dwindle" layout
-    - [] Switch keyboard layout
-    - [] Fix rounding on windows
-    - [] Fix animations
+    - [x] Maybe take away "dwindle" layout
+    - [x] Switch keyboard layout
+    - [x] Fix rounding on windows
+    - [x] Fix animations
     - [] Fix the thing that makes it so sending a window to a workspace makes you also switch to that workspace
-    - [] Fullscreen windows
+    - [x] Figure out how to define what happens on lid close
+    - [x] Fullscreen windows
 - [] Rofi/wofi config
     - [] Power menu
     - [] App launcher
+- [] File Manager GUI
+- [] File Manager TUI -> `lf`? `superfile` maybe `yazi` is better?
 - [] Lock screen config
 - [] Ratiogoblin
 - [] Clipboard

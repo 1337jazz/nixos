@@ -5,12 +5,11 @@
 	home.homeDirectory = "/home/jazz";
 	home.stateVersion = "25.11";
 
-	home.file."scripts".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/scripts";
-	# home.file.".config/i3".source = ./i3;
-	home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/nvim";
-	home.file.".config/kitty".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/kitty";
-	home.file.".config/hypr".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/hypr";
-	home.file.".config/waybar".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/waybar";
+	home.file."scripts".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/.config/scripts";
+	home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/.config/nvim";
+	home.file.".config/kitty".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/.config/kitty";
+	home.file.".config/hypr".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/.config/hypr";
+	home.file.".config/waybar".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/.config/waybar";
 
 	# Mako for notifications
 	services.mako.enable = true;
@@ -21,6 +20,7 @@
 		neovim
 		kitty
 		firefox
+		brave
 		fastfetch
 		ranger
 		trash-cli
@@ -46,6 +46,7 @@
 		jq
 		translate-shell
 		bluetui
+		btop
 
 		# Dev tools
 		nodejs_24
@@ -122,4 +123,13 @@
 			User jazz
 		";
 	};
+
+	programs.zoxide = {
+		enable = true;
+		enableFishIntegration = true;
+		options = [
+			"--cmd cd"
+		];
+	};
+
 }

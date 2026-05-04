@@ -29,6 +29,11 @@ button:hover {
 	background-color: #a37800;
 }
 
+/* #pulseaudio.muted { */
+/* 	background-color: #90b1b1; */
+/* 	color: #2a5c45; */
+/* } */
+
 #workspaces button {
 	padding: 0 10px;
 	background-color: transparent;
@@ -41,7 +46,8 @@ button:hover {
 
 #workspaces button.active,
 #workspaces button.active {
-	background-color: #64727D;
+	/* background-color: #64727D; */
+	border-bottom: 2px solid #ffffff;
 }
 
 #workspaces button.urgent {
@@ -123,14 +129,8 @@ label:focus {
 	background-color: #f53c3c;
 }
 
-#pulseaudio.muted {
-	background-color: #90b1b1;
-	color: #2a5c45;
-}
 
 
 #temperature.critical {
 	background-color: #eb4d4b;
 }
-
-#language {}

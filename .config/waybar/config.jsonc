@@ -7,7 +7,8 @@
 	"spacing": 4, // Gaps between modules (4px)
 	// Choose the order of the modules
 	"modules-left": [
-		"hyprland/workspaces"
+		"hyprland/workspaces",
+		"hyprland/submap"
 	],
 	"modules-right": [
 		"disk",
@@ -20,8 +21,12 @@
 		"network",
 		"clock"
 	],
+	"hyprland/submap": {
+		"format": "|  {}",
+		"tooltip": false
+	},
 	"hyprland/language": {
-		"format": "{}",
+		"format": "  {}",
 		"format-en": "gb",
 		"format-sv": "sv",
 		"keyboard-name": "at-translated-set-2-keyboard"
@@ -41,7 +46,7 @@
 		"tooltip": false
 	},
 	"memory": {
-		"format": " {}%"
+		"format": " {used} GB"
 	},
 	"temperature": {
 		"critical-threshold": 80,
@@ -54,8 +59,7 @@
 			"critical": 15
 		},
 		"format": "{icon} {capacity}%",
-		// "format-full": "{capacity}% {icon}",
-		"format-full": "",
+		"format-full": "",
 		"format-charging": "{capacity}% 󰃨",
 		"format-plugged": "{capacity}% ",
 		"format-alt": "{icon} {time}",

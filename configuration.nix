@@ -19,7 +19,12 @@
 	# Enable the Ly display manager
 	services.displayManager.ly.enable = true;
 
-	# Bootloader.
+	# Configure the lid for laptops
+	services.logind.settings.Login = {
+	  HandleLidSwitch = "ignore";
+	};
+
+	# Bootloader
 	boot.loader.grub.enable = true;
 	boot.loader.grub.device = "nodev";
 	boot.loader.grub.efiSupport = true;
@@ -29,6 +34,9 @@
 	# Enable networking
 	networking.hostName = "nixos"; # Define your hostname.
 	networking.networkmanager.enable = true;
+	networking.hosts = {
+		"192.168.0.151" = ["kevin"];
+	};
 
 	# Enable Bluetooth
 	hardware.bluetooth.enable = true;
