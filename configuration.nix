@@ -79,7 +79,7 @@
 	users.users.jazz = {
 		isNormalUser = true;
 		description = "jazz";
-		extraGroups = [ "networkmanager" "wheel" "docker"];
+		extraGroups = [ "networkmanager" "wheel" "docker" "adbusers" ];
 	};
 
 	# Allow unfree packages
@@ -94,6 +94,7 @@
 		gnumake
 		cargo
 		ripgrep
+		wl-clipboard
 	];
 
 	system.stateVersion = "25.11";

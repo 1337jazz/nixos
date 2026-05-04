@@ -32,7 +32,6 @@
 		pavucontrol
 		alsa-utils
 		playerctl
-		xclip
 		libnotify
 		hyprpolkitagent
 
@@ -47,6 +46,7 @@
 		translate-shell
 		bluetui
 		btop
+		android-tools
 
 		# Dev tools
 		nodejs_24
@@ -69,7 +69,7 @@
   		autosuggestion.enable = true;
 		shellAliases = {
 			l="ls -lah";
-			xc="xclip -sel clip";
+			xc="wl-copy";
 			te="trans --from swedish --to english -j";
 			ts="trans --from english --to swedish -j";
 			gu="git add .; git commit -m \"Update - $(date)\"; git push";
