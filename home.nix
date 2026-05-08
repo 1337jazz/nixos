@@ -16,6 +16,9 @@
 	# Mako for notifications
 	services.mako.enable = true;
 
+	# Syncthing
+	services.syncthing.enable = true;
+
 	# User packages
 	home.packages = with pkgs; [
 		# Personal tools
@@ -59,6 +62,7 @@
 		pnpm
 		go
 		pkgs-unstable.opencode
+		bruno
 	];
 
 	programs.git = {

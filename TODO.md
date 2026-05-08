@@ -30,5 +30,6 @@
 - [x] Brave
 - [] OpenVPN Skymill config with NetworkManager
 - [] Battery low alert
+- [] Syncthing
 
 

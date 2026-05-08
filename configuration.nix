@@ -116,6 +116,7 @@
 		dina-font
 		proggyfonts
 		nerd-fonts.jetbrains-mono
+		raleway
 	];
 
 	# Stylix for theming
