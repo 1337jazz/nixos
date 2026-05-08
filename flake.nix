@@ -8,9 +8,13 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+	stylix = {
+      url = "github:nix-community/stylix/release-25.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, stylix }:
     let 
       lib = nixpkgs.lib;
       pkgs-unstable = import nixpkgs-unstable { system = "x86_64-linux"; };
@@ -22,6 +26,7 @@
 	  ./configuration.nix
 	  home-manager.nixosModules.home-manager
 	  { home-manager.extraSpecialArgs = { inherit pkgs-unstable; }; }
+	  stylix.nixosModules.stylix
 	 ];
       };
     };

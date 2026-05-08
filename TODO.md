@@ -3,12 +3,12 @@
 - [x] Bluetooth gui -> blutui
 - [x] SSH
 - [x] Wifi gui -> nmcli
-- [] Waybar config
+- [x] Waybar config
     - [x] Keyboard layout
     - [-] Keyboard state (caps locks etc) 
-    - [] [stylix] Cursors (fix "Unable to load arrow from the cursor theme")
+    - [x] [stylix] Cursors (fix "Unable to load arrow from the cursor theme")
 - [] Hyprland config
-    - [] Sleep
+    - [x] Sleep
     - [] Screen locking
     - [x] No border when only one window is open
     - [x] Maybe take away "dwindle" layout
@@ -23,12 +23,12 @@
     - [] App launcher
 - [] File Manager GUI
 - [] File Manager TUI -> `lf`? `superfile` maybe `yazi` is better?
-- [] Lock screen config
 - [] Ratiogoblin
 - [x] Clipboard (xc->wl-clipboard)
-- [x] Clipboard (greenclip to?? for history)
-- [] Wallpaper
+- [] Clipboard (greenclip to ?? for history)
+- [x] Wallpaper
 - [x] Brave
 - [] OpenVPN Skymill config with NetworkManager
+- [] Battery low alert
 
 

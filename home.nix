@@ -1,6 +1,8 @@
-{ config, pkgs, pkgs-unstable, ... }:
+{ config, pkgs, pkgs-unstable, stylix, ... }:
 
 {
+	stylix.targets.waybar.enable = false;
+
 	home.username = "jazz";
 	home.homeDirectory = "/home/jazz";
 	home.stateVersion = "25.11";
@@ -34,6 +36,7 @@
 		playerctl
 		libnotify
 		hyprpolkitagent
+		swaybg
 
 		# CLI utilities
 		atool
@@ -47,6 +50,8 @@
 		bluetui
 		btop
 		android-tools
+		iperf3
+		lf
 
 		# Dev tools
 		nodejs_24

@@ -95,10 +95,15 @@
 		cargo
 		ripgrep
 		wl-clipboard
+		libreoffice-qt
+		hunspell # libreoffice dependency
+		hunspellDicts.en_GB-ise # hunspell dependency
+		hunspellDicts.sv_SE # hunspell dependency
 	];
 
 	system.stateVersion = "25.11";
 
+	# Fonts
 	fonts.packages = with pkgs; [
 		font-awesome
 		noto-fonts
@@ -113,5 +118,37 @@
 		nerd-fonts.jetbrains-mono
 	];
 
+	# Stylix for theming
+	stylix = {
+		enable = true;
+		base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-city-dark.yaml";
+		image = ./wallpaper.jpg;
+		fonts =  with pkgs; {
+			serif = {
+				package = dejavu_fonts;
+				name = "DejaVu Serif";
+			};
+
+			sansSerif = {
+				package = dejavu_fonts;
+				name = "DejaVu Sans";
+			};
+
+			monospace = {
+				package = nerd-fonts.jetbrains-mono;
+				name = "JetBrains Mono";
+			};
+
+		emoji = {
+			package = noto-fonts-color-emoji;
+			name = "Noto Color Emoji";
+		};
+		};
+		cursor = {
+			package = pkgs.adwaita-icon-theme;
+			name = "Adwaita";
+			size = 24;
+		};
+	};
 
 }
