@@ -61,6 +61,7 @@
 		yarn
 		pnpm
 		go
+		dotnet-sdk_10
 		pkgs-unstable.opencode
 		bruno
 	];

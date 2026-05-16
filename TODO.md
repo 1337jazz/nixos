@@ -30,6 +30,7 @@
 - [x] Brave
 - [] OpenVPN Skymill config with NetworkManager
 - [] Battery low alert
-- [] Syncthing
+- [x] Syncthing
+- [] Neovim is using nano for e.g. git amend, but it should be using nvim. Maybe set `EDITOR` env variable to `nvim`?
 
 

@@ -122,7 +122,7 @@
 	# Stylix for theming
 	stylix = {
 		enable = true;
-		base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-city-dark.yaml";
+		base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
 		image = ./wallpaper.jpg;
 		fonts =  with pkgs; {
 			serif = {
