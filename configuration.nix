@@ -99,7 +99,37 @@
 		hunspell # libreoffice dependency
 		hunspellDicts.en_GB-ise # hunspell dependency
 		hunspellDicts.sv_SE # hunspell dependency
+		wgnord
+		wireguard-tools
 	];
+
+	# wgnord needs /etc/wireguard to write its generated WireGuard config
+	systemd.tmpfiles.rules = [
+		"d /etc/wireguard 0700 root root -"
+	];
+
+	# wgnord stores credentials and template.conf in /var/lib/wgnord.
+	# The nixpkgs package doesn't create this directory or provide template.conf,
+	# so we do it here on activation. Only creates template.conf if missing
+	# (preserves any user customisations).
+	system.activationScripts.wgnord = ''
+		mkdir -p /var/lib/wgnord
+		if [ ! -f /var/lib/wgnord/template.conf ]; then
+			cat > /var/lib/wgnord/template.conf <<'EOF'
+[Interface]
+PrivateKey = PRIVKEY
+Address = 10.5.0.2/32
+MTU = 1350
+DNS = 103.86.96.100 103.86.99.100
+
+[Peer]
+PublicKey = SERVER_PUBKEY
+AllowedIPs = 0.0.0.0/0, ::/0
+Endpoint = SERVER_IP:51820
+PersistentKeepalive = 25
+EOF
+		fi
+	'';
 
 	system.stateVersion = "25.11";
 
