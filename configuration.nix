@@ -103,6 +103,9 @@
 		wireguard-tools
 	];
 
+  # Fix dynamically linked binaries issues
+  programs.nix-ld.enable = true;
+
 	# wgnord needs /etc/wireguard to write its generated WireGuard config
 	systemd.tmpfiles.rules = [
 		"d /etc/wireguard 0700 root root -"
