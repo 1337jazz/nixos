@@ -29,6 +29,9 @@
 		fastfetch
 		ranger
 		trash-cli
+    grim
+    slurp
+    swappy
 
 		# Wayland / desktop
 		nwg-displays
