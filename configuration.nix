@@ -101,6 +101,7 @@
 		hunspellDicts.sv_SE # hunspell dependency
 		wgnord
 		wireguard-tools
+    nautilus
 	];
 
   # Fix dynamically linked binaries issues
